@@ -12,11 +12,11 @@ Deberás crear un servidor backend que permita a los usuarios registrarse, inici
    - Realiza un fork de este repositorio en tu cuenta de GitHub.
    - Clona el repositorio forkeado en tu máquina local utilizando el siguiente comando:
      ```bash
-     git clone https://github.com/TU_USUARIO/nombre-del-repositorio.git
+     git clone https://github.com/FabioDrizZt/Ejercitacion-de-Autenticacion-con-JWT.git
      ```
    - Navega al directorio del proyecto:
      ```bash
-     cd nombre-del-repositorio
+     cd Ejercitacion-de-Autenticacion-con-JWT
      ```
 
 2. **Configuración del Entorno**:
