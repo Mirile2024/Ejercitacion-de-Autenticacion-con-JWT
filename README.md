@@ -75,7 +75,4 @@ Deberás crear un servidor backend que permita a los usuarios registrarse, inici
 - Esta ejercitación está diseñada para que aprendas haciendo, explorando conceptos como manejo de rutas, autenticación basada en tokens y uso de middleware en Express.
 - Investiga y consulta la documentación de Node.js y Express para resolver dudas y ampliar tu comprensión.
 
-## Ejemplo de Implementación:
-- Puedes encontrar un ejemplo básico de implementación en el archivo `index.js` de este repositorio. Utiliza esta información como referencia, pero asegúrate de escribir tu propia solución siguiendo las guías y comentarios proporcionados.
-
 ¡Buena suerte y disfruta el proceso de aprendizaje!
