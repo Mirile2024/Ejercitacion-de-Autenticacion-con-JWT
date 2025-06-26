@@ -1,0 +1,89 @@
+@hostname = http://localhost:3000
+
+# -----------------
+# AUTHENTICATION
+# -----------------
+
+### Registrar un nuevo usuario
+POST {{hostname}}/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+### Registrar otro usuario
+POST {{hostname}}/register
+Content-Type: application/json
+
+{
+  "username": "testuser2",
+  "password": "password456"
+}
+
+### Iniciar sesión para obtener el token
+# @name login
+@token = {{login.response.body.accessToken}}
+POST {{hostname}}/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+### Iniciar sesión con usuario incorrecto
+POST {{hostname}}/login
+Content-Type: application/json
+
+{
+  "username": "nouser",
+  "password": "wrongpassword"
+}
+
+
+# -----------------
+# TAREAS (Tasks)
+# -----------------
+
+### Crear una nueva tarea
+POST {{hostname}}/tareas
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Hacer la compra",
+  "description": "Comprar leche, pan y huevos."
+}
+
+### Crear otra tarea
+POST {{hostname}}/tareas
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Preparar la presentación de Node.js"
+}
+
+
+### Listar todas las tareas del usuario
+GET {{hostname}}/tareas
+Authorization: Bearer {{token}}
+
+
+### Intentar listar tareas sin token
+GET {{hostname}}/tareas
+
+
+### Eliminar una tarea (cambia el ID según la tarea que quieras eliminar)
+# Primero crea una tarea y luego usa su ID aquí. Por ejemplo, para eliminar la primera tarea (ID 1):
+DELETE {{hostname}}/tareas/1
+Authorization: Bearer {{token}}
+
+
+### Intentar eliminar una tarea de otro usuario (requiere configuración manual)
+# 1. Inicia sesión como 'testuser2' para obtener su token.
+# 2. Intenta eliminar la tarea con ID 1 (que pertenece a 'testuser') usando el token de 'testuser2'.
+# DELETE {{hostname}}/tareas/1
+# Authorization: Bearer <token_de_testuser2> 
