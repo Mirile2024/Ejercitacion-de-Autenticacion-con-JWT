@@ -19,7 +19,7 @@ Content-Type: application/json
 
 {
   "username": "testuser2",
-  "password": "password456"
+  "password": "password4567"
 }
 
 ### Iniciar sesión para obtener el token
@@ -53,7 +53,7 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "title": "Hacer la compra",
+  "tarea": "Hacer la compra",
   "description": "Comprar leche, pan y huevos."
 }
 
@@ -63,7 +63,7 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "title": "Preparar la presentación de Node.js"
+  "tarea": "Preparar la presentación de Node.js"
 }
 
 
@@ -78,7 +78,7 @@ GET {{hostname}}/tareas
 
 ### Eliminar una tarea (cambia el ID según la tarea que quieras eliminar)
 # Primero crea una tarea y luego usa su ID aquí. Por ejemplo, para eliminar la primera tarea (ID 1):
-DELETE {{hostname}}/tareas/1
+DELETE {{hostname}}/tareas/6
 Authorization: Bearer {{token}}
 
 
